@@ -57,7 +57,7 @@ function willYouMarryMe(isPositiveAnswer) {
 function processAllPromises(array) {
   return new Promise((resolve) => {
     resolve(array.reduce((newArr, item) => {
-      item.then(res => newArr.push(res));
+      item.then((res) => newArr.push(res));
       return newArr;
     }, []));
   });
@@ -106,7 +106,7 @@ function getFastestPromise(/* array */) {
 function chainPromises(array, action) {
   return new Promise((resolve) => {
     let timeVal = '';
-    resolve(array.reduce((newArr, item, index) => item.then(res => {
+    resolve(array.reduce((newArr, item, index) => item.then((res) => {
       if (index === 0) {
         timeVal = res;
         return timeVal;
